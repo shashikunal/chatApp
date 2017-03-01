@@ -4,7 +4,15 @@ var room = getQueryVariable('room');
 
 socket.on('connect' , function(){
 	console.log('Connected to socket io Server');
+    socket.emit('joinRoom' , {
+    	name:name,
+    	room : room
+    });
 });
+
+
+//room title
+jQuery('.message-title').text(room);
 
 socket.on('message' , function(message){
 	var momentTimestamp = moment.utc(message.timestamp);
