@@ -20,6 +20,21 @@ io.on('connection' , function(socket){
        	timestamp:moment().valueOf()
        });
     });
+    
+    socket.on('disconnect' , function(){
+    	var userData = clientInfo[socket.id];
+    	if(typeof userData !== 'undefined'){
+           socket.leave(userData.room);
+           io.to(userData.room).emit('message' , {
+           	name : 'System',
+           	text : userData.name + " "  + 'has Left' ,
+           	timestamp : moment().valueOf()
+           });
+    	  delete clientInfo[socket.id];
+    	}
+
+    });
+
 
     socket.on('message' , function(message){
     	console.log('message Received' + " " + message.text);
