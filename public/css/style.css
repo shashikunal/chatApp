@@ -1,0 +1,46 @@
+body , h1 , h2 , h3 ,h4 , h5 ,h6 {
+ font-family: 'Roboto', sans-serif;
+   color: #333;
+
+}
+
+.container {padding:20px;}
+.center-div {
+	position: absolute;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    /* width: 25%; */
+    margin: auto;
+    background: #eee;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 14px;
+}
+
+.button {
+	    margin: 10px 0;
+}
+.message-title , .center-div  h1{
+	background: #fff;
+    padding: 10px 9px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ccc;
+}
+
+p:nth-child(even) {
+	background: rgba(230, 227, 227, 0.76);
+    padding: 10px;
+}
+p:nth-child(even) {
+	background: #fff;
+    padding: 10px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 6px;
+    font-weight: 700;
+    margin-top: 10px;
+}
